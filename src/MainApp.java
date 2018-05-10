@@ -27,7 +27,7 @@ public class MainApp {
 		}
 		if (userChoice == 3) {
 			System.out.println("What book would you like to return? (number)");
-			int bookReturn = Validator.getInstance(scan, )//FileMethod.writeToFile
+			int bookReturn = Validator.getInstance(scan,);//FileMethod.writeToFile
 			int bookReturn = scan.nextInt();
 			System.out.println();
 		}

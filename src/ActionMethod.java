@@ -19,7 +19,11 @@ public class ActionMethod {
 			String line = reader.readLine();
 
 			while (line != null) {
-				System.out.println(line.split(","));
+				String[] temp = line.split(",");
+		Book b = new Book(temp[0], temp[1]);
+			   
+				System.out.println(temp[0]);
+				System.out.println();
 				line = reader.readLine();
 			}
 

@@ -1,14 +1,16 @@
 
-public class book {
-private int number;
+public class Book {
+
 private String bookTitle;
 private String author;
 public String status;
 private long dueDate;
 
-	public book(int number,String bookTitle, String status) {
+
+
+public Book(String bookTitle,String author) {
 		super();
-		this.number = number;
+		this.author = author;
 		this.bookTitle = bookTitle;
 		this.status= status;
 		this.dueDate= dueDate;
@@ -30,13 +32,6 @@ private long dueDate;
 		this.dueDate = dueDate;
 	}
 
-	public int getNumber() {
-		return number;
-	}
-
-	public void setNumber(int number) {
-		this.number = number;
-	}
 
 	public String getBookTitle() {
 		return bookTitle;

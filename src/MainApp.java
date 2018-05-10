@@ -9,6 +9,7 @@ public class MainApp {
 		
 		System.out.println("This is a line!!");
 System.out.println("party all niiit");
+System.out.println("YES!^^^");
 	}
 
 }

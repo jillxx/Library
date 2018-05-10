@@ -24,7 +24,7 @@ public class LibraryApp {
 		if (userChoice == 2) {
 
 			ActionMethod.readFromBookList();
-			System.out.println("Please enter the book number you want to borrow");
+			System.out.println("\nPlease enter the book number you want to borrow");
 			//check out and set duedate
 			//already checked out. show message
 

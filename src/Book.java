@@ -57,7 +57,7 @@ public Book(String bookTitle,String author) {
 	public String toString() {
 		
 
-		return String.format("%1$-30s %2$-10s",bookTitle,author);
+		return String.format("%1$-50s %2$-10s",bookTitle,author);
 	}
 	
 	

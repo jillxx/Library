@@ -17,7 +17,7 @@ public class ActionMethod {
 			BufferedReader reader = new BufferedReader(fr);// read blocks of info
 
 			String line = reader.readLine();
-System.out.printf("%1$-30s %2$-10s","bookTitle","Author");
+System.out.printf("%1$-50s %2$-10s","bookTitle","Author");
 			while (line != null) {
 				String[] temp = line.split(",");
 		Book b = new Book(temp[0], temp[1]);

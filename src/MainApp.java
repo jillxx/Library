@@ -8,7 +8,7 @@ public class MainApp {
 		System.out.println("Hello my name is Brent!");
 		
 		System.out.println("This is a line!!");
-
+System.out.println("party all niiit");
 	}
 
 }

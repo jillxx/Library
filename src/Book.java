@@ -16,6 +16,8 @@ public Book(String bookTitle,String author) {
 		this.dueDate= dueDate;
 	}
 
+	
+
 	public String getAuthor() {
 		return author;
 	}
@@ -48,5 +50,15 @@ public Book(String bookTitle,String author) {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
+
+
+	@Override
+	public String toString() {
+		
+
+		return String.format("%1$-30s %2$-10s",bookTitle,author);
+	}
+	
 	
 }

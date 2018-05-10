@@ -17,13 +17,13 @@ public class ActionMethod {
 			BufferedReader reader = new BufferedReader(fr);// read blocks of info
 
 			String line = reader.readLine();
-
+System.out.printf("%1$-30s %2$-10s","bookTitle","Author");
 			while (line != null) {
 				String[] temp = line.split(",");
 		Book b = new Book(temp[0], temp[1]);
-			   
-				System.out.println(temp[0]);
-				System.out.println();
+			 System.out.println();
+				// System.out.println(temp[0]);
+				System.out.println(b);
 				line = reader.readLine();
 			}
 

@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 import sun.security.validator.Validator;
 
-public class MainApp {
+public class LibraryApp {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to the Library!");
@@ -23,6 +23,7 @@ public class MainApp {
 			System.out.println("Search by title keyword");
 	}
 		if (userChoice == 2) {
+			ActionMethod.readFromBookList();
 			System.out.println("Please enter the book number you want to borrow");
 			//check out and set duedate
 			//already checked out. show message
@@ -31,7 +32,7 @@ public class MainApp {
 			System.out.println("This is the book you have borrowed");
 			System.out.println("What book would you like to return? (number)");
 			//change the status of the book to null.
-		    int bookReturn = Validator.getInstance(scan, )//FileMethod.writeToFile
+		  //  int bookReturn = Validator.getInstance(scan, )//FileMethod.writeToFile
 	
 			System.out.println();
 		}

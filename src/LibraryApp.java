@@ -11,11 +11,10 @@ public class LibraryApp {
 		String loginId = scan.nextLine();
 		
 		System.out.println("Please choose from the options below:");
-		System.out.println("1. Show book list");
-		System.out.println("2. Show DVD list");
-		System.out.println("3. Return book");
-		System.out.println("4. Return DVD");
-		System.out.println("3. Quit");
+		System.out.println("1. Search by category");
+		System.out.println("2. Display our inventory");
+		System.out.println("3. Return");
+		System.out.println("4. Quit");
 		
 		int userChoice = scan.nextInt();
 		

@@ -27,7 +27,8 @@ public class ActionMethod {
 
 				rentList.add(temp1[0] + "," + temp1[1] + "," + temp1[2] + "," + temp1[3] + "," + user + "," + 2222);
 				System.out.println(rentList);
-
+				wholeBook.set(i, temp1[0] + "," + temp1[1] + "," + temp1[2] + "," + temp1[3] + "," + user + "," + 2222);
+				
 			}
 			Path readFile = Paths.get("book.txt");// get the path of the file
 			File file = readFile.toFile();// convert to a file object.

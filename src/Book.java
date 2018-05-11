@@ -15,10 +15,17 @@ public class Book {
 		this.author = author;
 		this.bookTitle = bookTitle;
 		this.status = status;
-		this.dueDate = dueDate;
 		this.counter = counter;
 		this.bookID=bookID;
 	}
+	
+
+
+
+	public Book() {
+		// TODO Auto-generated constructor stub
+	}
+
 
 	public String getBookID() {
 		return bookID;

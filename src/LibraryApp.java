@@ -7,8 +7,8 @@ public class LibraryApp {
 		System.out.println("Welcome to the Library!");
 		System.out.println("Please login:");
 		Scanner scan = new Scanner(System.in);
-		String UserId = scan.nextLine();
-		System.out.print(UserId + ", ");
+		String userID = scan.nextLine();
+		System.out.print(userID + ", ");
 		System.out.println("Please choose from the options below:");
 		System.out.println("1. Search by category");
 		System.out.println("2. Display our inventory");
@@ -46,7 +46,7 @@ public class LibraryApp {
 			int borrow=scan.nextInt();
 			
 			//working on
-			ActionMethod.checkOutBook();
+			ActionMethod.checkOut(borrow, userID);
 			// check out and set duedate
 			// already checked out. show message
 

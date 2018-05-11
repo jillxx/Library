@@ -2,11 +2,11 @@
 2,The Catcher in the Rye,J.D Salinger,OnShelf,
 3,Into The Wild,John Krakauer,CheckedOut,in2weeks
 4,Death Troopers:Star Wars,Joe Schreiber,CheckedOut,Brent,in2weeks
-5,Path of Destruction: Star Wars Legends, Drew Karpyshyn, in2weeks
-6,The Rule Of Two: Star Wars Legends, Drew Karpyshyn, in2weeks
-7,Darth Bane: Dynasty of Evil: Star Wars Legends, Drew Karpyshyn, in2weeks
-8,Hamlet, Shakespeare, in2weeks
-9,Clockwork Orange, Anthony Burgess, in2weeks
-10,1984, George Orwell, in2weeks
-11,Animal Farm, George Orwell, in2weeks
-12,SuperBetter: The Power of Living Gamefully, Jane McGonigal,in2weeks
+5,Path of Destruction: Star Wars Legends, Drew Karpyshyn,CheckedOut,lomk, in2weeks
+6,The Rule Of Two: Star Wars Legends, Drew Karpyshyn,OnShelf
+7,Darth Bane: Dynasty of Evil: Star Wars Legends, Drew Karpyshyn, onShelf
+8,Hamlet, Shakespeare, CheckedOut,nill,in2weeks
+9,Clockwork Orange, Anthony Burgess,CheckedOut, in2weeks
+10,1984, George Orwell,CheckedOut, in2weeks
+11,Animal Farm, George Orwell, OnShelf
+12,SuperBetter: The Power of Living Gamefully, Jane McGonigal,OnShelf

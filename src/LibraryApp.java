@@ -43,6 +43,7 @@ public class LibraryApp {
 
 			ActionMethod.readFromBookList();
 			System.out.println("\nPlease enter the book number you want to borrow");
+			int borrow=scan.nextInt();
 			
 			//working on
 			ActionMethod.checkOutBook();

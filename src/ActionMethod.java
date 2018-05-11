@@ -15,6 +15,17 @@ static Scanner scan = new Scanner(System.in);
 static ArrayList<String> rentList = new ArrayList<String>();
 static ArrayList<String> wholeBook= new ArrayList<String>();
 
+public static void checkOut(int borrow) {
+	for (int i=0;i<wholeBook.size();i++) {
+		String[]temp1=wholeBook.get(i).split(",");
+		int borrowInput=Integer.parseInt(temp1[0]);
+		if(borrow==borrowInput) {
+			
+		}
+		
+	System.out.println();
+	}
+}
 
 	public static void readFromBookList() {
 		Path readFile = Paths.get("library/book.txt");

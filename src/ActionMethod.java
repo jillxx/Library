@@ -11,7 +11,10 @@ import java.util.Scanner;
 
 public class ActionMethod {
 static Scanner scan = new Scanner(System.in);
+
 static ArrayList<String> rentList = new ArrayList<String>();
+static ArrayList<String> wholeBook= new ArrayList<String>();
+
 
 	public static void readFromBookList() {
 		Path readFile = Paths.get("library/book.txt");
@@ -23,17 +26,18 @@ static ArrayList<String> rentList = new ArrayList<String>();
 			BufferedReader reader = new BufferedReader(fr);// read blocks of info
 
 			String line = reader.readLine();
-			System.out.printf("     %1$-50s %2$-20s %3$-10s", "BookTitle", "Author", "Status");
+			System.out.printf("     %1$-50s %2$-20s %3$-10s %4$-10s", "BookTitle", "Author", "Status","BookId");
 			System.out.println();
 			int counter = 1;
 			while (line != null) {
 				String[] temp = line.split(",");
-				Book b = new Book(temp[1], temp[2], temp[3], counter);
-				System.out.println();
+				wholeBook.add(line);//this is adding the list to an array which we can modify the txt file
+				Book b = new Book(temp[1], temp[2], temp[3], counter,temp[0]);
+				System.out.println(b);// this is printing the whole list
 				// System.out.println(temp[0]);
 				counter++;
 				line = reader.readLine();
-			}
+			}System.out.println(wholeBook);
 
 			reader.close();// close the file reader too
 
@@ -59,7 +63,7 @@ static ArrayList<String> rentList = new ArrayList<String>();
 			int counter=1;
 			while (line != null) {
 				String[] temp = line.split(",");
-				Book b = new Book(temp[1], temp[2], temp[3],counter);
+				Book b = new Book(temp[1], temp[2], temp[3],counter,temp[0]);
 				if (temp[2].equalsIgnoreCase(author)) {
 					System.out.println();
 
@@ -94,13 +98,13 @@ static ArrayList<String> rentList = new ArrayList<String>();
 			ArrayList<String> searchKeyword = new ArrayList<String>();
 			while (line != null) {
 				String[] temp = line.split(",");
-				Book b = new Book(temp[1], temp[2], temp[3],counter);
+				Book b = new Book(temp[1], temp[2], temp[3],counter,temp[0]);
 				String[] tempTitle = temp[1].toLowerCase().split("[ :.,?!]+");
 				
 				if (Arrays.asList(tempTitle).contains(keyword.trim().toLowerCase())) {
 					System.out.println(b);
 
-					String b1 = temp[1] + ", "+ temp[2]+", " +temp[3] + ", " +counter; 
+					String b1 = temp[1] + ", "+ temp[2]+", " +temp[3] + ", " +counter+", "+temp[0]; 
 					counter++;
 					searchKeyword.add(b1);
 				}

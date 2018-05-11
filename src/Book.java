@@ -1,7 +1,7 @@
 
 public class Book {
 
-	private int bookID;
+	private String bookID;
 	private String bookTitle;
 	private String author;
 	private String status;
@@ -10,20 +10,21 @@ public class Book {
 	private int counter;
 
 
-	public Book(String bookTitle, String author, String status, int counter) {
+	public Book(String bookTitle, String author, String status, int counter,String bookID) {
 		super();
 		this.author = author;
 		this.bookTitle = bookTitle;
 		this.status = status;
 		this.dueDate = dueDate;
 		this.counter = counter;
+		this.bookID=bookID;
 	}
 
-	public int getBookID() {
+	public String getBookID() {
 		return bookID;
 	}
 
-	public void setBookID(int bookID) {
+	public void setBookID(String bookID) {
 		this.bookID = bookID;
 	}
 
@@ -70,7 +71,7 @@ public class Book {
 	@Override
 	public String toString() {
 
-		return String.format("%1$-4d %2$-50s %3$-20s %4$-10s",counter, bookTitle, author, status);
+		return String.format("%1$-4d %2$-50s %3$-20s %4$-10s %5$-5s",counter, bookTitle, author, status,bookID);
 	}
 
 }

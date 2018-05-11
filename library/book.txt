@@ -1,12 +1,12 @@
-Harry Potter,J.K.Rowling,Jill,in2weeks
-The Catcher in the Rye,J.D Salinger,Brent,in2weeks
-Into The Wild,John Krakauer,Brent,in2weeks
-Death Troopers:Star Wars,Joe Schreiber,in2weeks
-Path of Destruction: Star Wars Legends, Drew Karpyshyn, in2weeks
-The Rule Of Two: Star Wars Legends, Drew Karpyshyn, in2weeks
-Darth Bane: Dynasty of Evil: Star Wars Legends, Drew Karpyshyn, in2weeks
-Hamlet, Shakespeare, in2weeks
-Clockwork Orange, Anthony Burgess, in2weeks
-1984, George Orwell, in2weeks
-Animal Farm, George Orwell, in2weeks
-SuperBetter: The Power of Living Gamefully, Jane McGonigal,in2weeks
+1,Harry Potter,J.K.Rowling,CheckedOut,Jill,in2weeks
+2,The Catcher in the Rye,J.D Salinger,OnShelf,
+3,Into The Wild,John Krakauer,CheckedOut,in2weeks
+4,Death Troopers:Star Wars,Joe Schreiber,CheckedOut,Brent,in2weeks
+5,Path of Destruction: Star Wars Legends, Drew Karpyshyn, in2weeks
+6,The Rule Of Two: Star Wars Legends, Drew Karpyshyn, in2weeks
+7,Darth Bane: Dynasty of Evil: Star Wars Legends, Drew Karpyshyn, in2weeks
+8,Hamlet, Shakespeare, in2weeks
+9,Clockwork Orange, Anthony Burgess, in2weeks
+10,1984, George Orwell, in2weeks
+11,Animal Farm, George Orwell, in2weeks
+12,SuperBetter: The Power of Living Gamefully, Jane McGonigal,in2weeks

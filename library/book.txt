@@ -1,10 +1,10 @@
 001,Harry Potter,J.K.Rowling,CheckedOut,Jill,in2weeks
-002,The Catcher in the Rye,J.D Salinger,OnShelf,,
+002,The Catcher in the Rye,J.D Salinger,CheckedOut,shuvo,2222
 003,Into The Wild,John Krakauer,CheckedOut,in2weeks
 004,Death Troopers:Star Wars,Joe Schreiber,CheckedOut,Brent,in2weeks
-005,Path of Destruction: Star Wars Legends, Drew Karpyshyn, in2weeks
+005,Path of Destruction: Star Wars Legends, Drew Karpyshyn,CheckedOut,fff,2222
 006,The Rule Of Two: Star Wars Legends, Drew Karpyshyn, in2weeks
-007,Darth Bane: Dynasty of Evil: Star Wars Legends, Drew Karpyshyn, in2weeks
+007,Darth Bane: Dynasty of Evil: Star Wars Legends, Drew Karpyshyn,CheckedOut,shuvo,2222
 008,Hamlet, Shakespeare, in2weeks
 009,Clockwork Orange, Anthony Burgess, in2weeks
 010,1984, George Orwell, in2weeks

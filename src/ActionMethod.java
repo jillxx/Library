@@ -12,60 +12,8 @@ import java.util.Scanner;
 
 public class ActionMethod {
 	static Scanner scan = new Scanner(System.in);
-
 	static ArrayList<String> rentList = new ArrayList<String>();
 	static ArrayList<String> wholeBook = new ArrayList<String>();
-
-	public static void checkOut(int borrow, String user) {
-		for (int i = 0; i < wholeBook.size(); i++) {
-			String[] temp1 = wholeBook.get(i).split(",");
-
-			int borrowInput = Integer.parseInt(temp1[0]);
-
-			if (borrow == borrowInput) {
-				temp1[3] = Status.CheckedOut.toString();
-
-				rentList.add(temp1[0] + "," + temp1[1] + "," + temp1[2] + "," + temp1[3] + "," + user + "," + 2222);
-				System.out.println(rentList);
-				wholeBook.set(i, temp1[0] + "," + temp1[1] + "," + temp1[2] + "," + temp1[3] + "," + user + "," + 2222);
-				
-			}
-			Path readFile = Paths.get("book.txt");// get the path of the file
-			File file = readFile.toFile();// convert to a file object.
-			Path writeFile = Paths.get("temp.txt"); // create a temp file path
-			File file1 = writeFile.toFile();// create a temp object.
-
-			try {
-				FileReader fr = new FileReader(file);// read char to char
-
-				BufferedReader reader = new BufferedReader(fr);// read blocks of info
-				PrintWriter outW = new PrintWriter(new FileOutputStream(file1));
-
-				String line = null;
-
-				while ((line = reader.readLine()) != null) {
-					// write the line to new file when the line is not the input text.
-
-					outW.println(line);
-				}
-
-				outW.close();
-				reader.close();// close the file reader
-				// Delete the original file
-				if (!file.delete()) {
-					System.out.println("Could not delete file");
-					return;
-				}
-
-				// Rename the new file to the filename the original file had.
-				if (!file1.renameTo(file))
-					System.out.println("Could not rename file");
-			} catch (IOException e) {
-				System.out.println("Something went wrong");
-			}
-
-		}
-	}
 
 	public static void readFromBookList() {
 		Path readFile = Paths.get("library/book.txt");
@@ -94,6 +42,57 @@ public class ActionMethod {
 
 		} catch (IOException e) {
 			System.out.println("The system is crashed, please try again");
+		}
+	}
+
+	// ==============================================================================================
+	public static void checkOut(String user, int borrow) {
+		Path readFile = Paths.get("library/book.txt");// get the path of the file
+		File file = readFile.toFile();// convert to a file object.
+		Path writeFile = Paths.get("library/temp.txt"); // create a temp file path
+		File file1 = writeFile.toFile();// create a temp object.
+
+		try {
+			FileReader fr = new FileReader(file);// read char to char
+			BufferedReader reader = new BufferedReader(fr);// read blocks of info
+			PrintWriter outW = new PrintWriter(new FileOutputStream(file1));
+			for (int i = 0; i < wholeBook.size(); i++) {
+				String[] temp1 = wholeBook.get(i).split(",");
+
+				int borrowInput = Integer.parseInt(temp1[0]);
+
+				if (borrow == borrowInput) {
+					if (!temp1[3].equals(Status.CheckedOut.toString())) {
+						temp1[3] = Status.CheckedOut.toString();
+						rentList.add(
+								temp1[0] + "," + temp1[1] + "," + temp1[2] + "," + temp1[3] + "," + user + "," + 2222);
+						wholeBook.set(i,
+								temp1[0] + "," + temp1[1] + "," + temp1[2] + "," + temp1[3] + "," + user + "," + 2222);
+
+					} else {
+						System.out.println(temp1[1] + " has been checked out by another person.");
+					}
+				}
+				outW.println(wholeBook.get(i));
+			}
+
+			outW.close();
+			reader.close();
+
+			if (!file.delete()) {// delete the old booklist file
+				System.out.println("Could not delete file");
+				return;
+			}
+
+			// Rename the temp file book.txt
+			if (!file1.renameTo(file)) {
+				System.out.println("Could not rename file");
+			}
+			// System.out.println(rentList.size() + " items has been checked out.");
+			// System.out.println(rentList.get(1));
+
+		} catch (IOException e) {
+			System.out.println("Something went wrong");
 		}
 
 	}

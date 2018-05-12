@@ -27,7 +27,7 @@ public class LibraryApp {
                 System.out.println("The choice you entered is not avaiable");
             }
         }
-        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         if (userChoice == 2) {
             System.out.println("The books in our library are listed below: ");// done
             ActionMethod.readFromBookList();

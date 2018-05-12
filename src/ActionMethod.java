@@ -79,6 +79,7 @@ public class ActionMethod {
             System.out.println("Something went wrong");
         }
     }
+    //======================================================================================================
     public static void researchAuthor(String author) {
         Path readFile = Paths.get("library/book.txt");
         File file = readFile.toFile();// convert to a file object.
@@ -104,6 +105,7 @@ public class ActionMethod {
             System.out.println("The system is crashed, please try again");
         }
     }
+    //=========================================================================================================
     public static void researchKeyword(String keyword,String userID) {
         Path readFile = Paths.get("library/book.txt");
         File file = readFile.toFile();// convert to a file object.

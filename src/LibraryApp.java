@@ -8,7 +8,7 @@ public class LibraryApp {
 
 		System.out.println("Welcome to the Library!");
 		System.out.println();
-		String userID = Validator.getString(scan, "Please enter your name:");	
+		String userID = Validator.getString(scan, "Please enter your name:");
 		System.out.print(userID + ", ");
 		System.out.println("Please choose from the options below:");
 		System.out.println("1. Search by category");
@@ -26,12 +26,11 @@ public class LibraryApp {
 				ActionMethod.researchAuthor(author, userID);
 
 			}
-			
 
 			else if (searchChoice == 2) {
 				String keyword = Validator.getString(scan, "Please enter title keyword");
 				ActionMethod.researchKeyword(keyword, userID);
-	
+
 			} else {
 				System.out.println("The choice you entered is not avaiable");
 
@@ -42,7 +41,7 @@ public class LibraryApp {
 		if (userChoice == 2) {
 			System.out.println("The books in our library are listed below: ");// done
 			ActionMethod.readFromBookList();
-			
+
 			// check out and set duedate
 			// already checked out. show message
 			while (count.equalsIgnoreCase("y")) {
@@ -56,10 +55,10 @@ public class LibraryApp {
 		// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		if (userChoice == 3) {
 			ActionMethod.pullRentList(userID);
-             int bookID = Validator.getInt(scan, "What book would you like to return? (enter BookID)",100,111);
-             
-         	ActionMethod.returnMethod(userID,bookID);
-		
+			int bookID = Validator.getInt(scan, "What book would you like to return? (enter BookID)", 100, 111);
+
+			ActionMethod.returnMethod(userID, bookID);
+
 			System.out.println();
 		}
 		scan.close();

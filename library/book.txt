@@ -1,12 +1,24 @@
-100,Harry Potter,J.K.Rowling,OnShelf
-101,The Catcher in the Rye,J.D Salinger,OnShelf
+100,Harry Potter,J.K.Rowling,CheckedOut,jill,2018-05-28
+101,The Catcher in the Rye,J.D Salinger,CheckedOut,jill,2018-05-28
 102,Into The Wild,John Krakauer,OnShelf
-103,Death Troopers:Star Wars,Joe Schreiber,OnShelf
-104,Path of Destruction: Star Wars Legends, Drew Karpyshyn,OnShelf
-105,The Rule Of Two: Star Wars Legends, Drew Karpyshyn,OnShelf
-106,Darth Bane: Dynasty of Evil: Star Wars Legends, Drew Karpyshyn,OnShelf
-107,Hamlet, Shakespeare,OnShelf
-108,Clockwork Orange, Anthony Burgess,OnShelf
-109,1984, George Orwell,OnShelf
-110,Animal Farm, George Orwell,OnShelf
-111,SuperBetter: The Power of Living Gamefully, Jane McGonigal,OnShelf
+103,Death Troopers:Star Wars,Joe Schreiber,CheckedOut,Jill,2018-05-27
+104,Path of Destruction: Star Wars Legends,Drew Karpyshyn,CheckedOut,jill,2018-05-28
+105,The Rule Of Two: Star Wars Legends,Drew Karpyshyn,OnShelf
+106,Darth Bane: Dynasty of Evil: Star Wars Legends,Drew Karpyshyn,CheckedOut,jill,2018-05-28
+107,Hamlet,Shakespeare,OnShelf
+108,Clockwork Orange,Anthony Burgess,OnShelf
+109,1984,George Orwell,OnShelf
+110,Animal Farm,George Orwell,OnShelf
+111,SuperBetter: The Power of Living Gamefully,Jane McGonigal,OnShelf
+100,Harry Potter,J.K.Rowling,CheckedOut,jill,2018-05-28
+101,The Catcher in the Rye,J.D Salinger,CheckedOut,jill,2018-05-28
+102,Into The Wild,John Krakauer,OnShelf
+103,Death Troopers:Star Wars,Joe Schreiber,CheckedOut,Jill,2018-05-27
+104,Path of Destruction: Star Wars Legends,Drew Karpyshyn,CheckedOut,jill,2018-05-28
+105,The Rule Of Two: Star Wars Legends,Drew Karpyshyn,OnShelf
+106,Darth Bane: Dynasty of Evil: Star Wars Legends,Drew Karpyshyn,CheckedOut,jill,2018-05-28
+107,Hamlet,Shakespeare,OnShelf
+108,Clockwork Orange,Anthony Burgess,OnShelf
+109,1984,George Orwell,OnShelf
+110,Animal Farm,George Orwell,OnShelf
+111,SuperBetter: The Power of Living Gamefully,Jane McGonigal,OnShelf

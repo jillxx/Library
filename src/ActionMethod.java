@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -26,15 +27,18 @@ public class ActionMethod {
 			BufferedReader reader = new BufferedReader(fr);// read blocks of info
 
 			String line = reader.readLine();
-			System.out.printf("     %1$-50s %2$-20s %3$-10s %4$-10s", "BookTitle", "Author", "Status", "BookId");
+			System.out.printf("     %1$-50s %2$-20s %3$-10s %4$-15s %5$-15s", "BookTitle", "Author", "BookID", "Status","Due Date");
 			System.out.println();
 			int counter = 1;
 			while (line != null) {
 				String[] temp = line.split(",");
 				wholeBook.add(line);// this is adding the list to an array which we can modify the txt file
 				Book b = new Book(temp[1], temp[2], temp[3], counter, temp[0]);
-				System.out.println(b);// this is printing the whole list
-				// System.out.println(temp[0]);
+				System.out.print(b);// this is printing the whole list
+				if (temp.length>4) {
+					System.out.print(temp[5]);
+				}
+				System.out.println();
 				counter++;
 				line = reader.readLine();
 			}
@@ -65,10 +69,10 @@ public class ActionMethod {
 				if (bookID == borrowInput) {
 					if (!temp1[3].equals(Status.CheckedOut.toString())) {
 						temp1[3] = Status.CheckedOut.toString();
-						rentList.add(
-								temp1[0] + "," + temp1[1] + "," + temp1[2] + "," + temp1[3] + "," + user + "," + 2222);
-						wholeBook.set(i,
-								temp1[0] + "," + temp1[1] + "," + temp1[2] + "," + temp1[3] + "," + user + "," + 2222);
+						rentList.add(temp1[0] + "," + temp1[1] + "," + temp1[2] + "," + temp1[3] + "," + user + ","
+								+ LocalDate.now().plusWeeks(2));
+						wholeBook.set(i, temp1[0] + "," + temp1[1] + "," + temp1[2] + "," + temp1[3] + "," + user + ","
+								+ LocalDate.now().plusWeeks(2));
 
 					} else {
 						System.out.println(temp1[1] + " has been checked out by another person.");
@@ -89,7 +93,7 @@ public class ActionMethod {
 			if (!file1.renameTo(file)) {
 				System.out.println("Could not rename file");
 			}
-			// System.out.println(rentList.size() + " items has been checked out.");
+		//	System.out.println(rentList.size() + " items has been checked out.");
 			// System.out.println(rentList.get(1));
 
 		} catch (IOException e) {
@@ -111,7 +115,7 @@ public class ActionMethod {
 			BufferedReader reader = new BufferedReader(fr);// read blocks of info
 
 			String line = reader.readLine();
-			System.out.printf("     %1$-50s %2$-20s %3$-10s %4$-10s", "BookTitle", "Author", "Status", "BookId");
+			System.out.printf("     %1$-50s %2$-20s %3$-10s %4$-10s", "BookTitle", "Author", "BookId","Status");
 			System.out.println();
 			int counter = 1;
 			ArrayList<String> searchAuthor = new ArrayList<String>();
@@ -166,7 +170,7 @@ public class ActionMethod {
 			BufferedReader reader = new BufferedReader(fr);// read blocks of info
 
 			String line = reader.readLine();
-			System.out.printf("     %1$-50s %2$-20s %3$-10s %4$-10s", "BookTitle", "Author", "Status", "BookId");
+			System.out.printf("     %1$-50s %2$-20s %3$-10s %4$-10s", "BookTitle", "Author", "BookId", "Status");
 			System.out.println();
 			int counter = 1;
 			ArrayList<String> searchKeyword = new ArrayList<String>();
@@ -245,6 +249,7 @@ public class ActionMethod {
 		}
 	}
 
+	// =========================================================
 	public static void returnMethod(String userID, int bookID) {
 		Path readFile = Paths.get("library/book.txt");// get the path of the file
 		File file = readFile.toFile();// convert to a file object.
@@ -286,7 +291,7 @@ public class ActionMethod {
 			if (!file1.renameTo(file)) {
 				System.out.println("Could not rename file");
 			}
-			// System.out.println(rentList.size() + " items has been checked out.");
+			System.out.println(rentList.size() + " items has been checked out.");
 			// System.out.println(rentList.get(1));
 
 		} catch (IOException e) {

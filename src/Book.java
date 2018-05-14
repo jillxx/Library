@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 
 public class Book {
 
@@ -6,7 +7,7 @@ public class Book {
 	private String author;
 	private String status;
 	private String borrower;
-	private long dueDate;
+	private LocalDate dueDate;
 	private int counter;
 
 
@@ -19,13 +20,6 @@ public class Book {
 		this.bookID=bookID;
 	}
 	
-
-
-
-	public Book() {
-		// TODO Auto-generated constructor stub
-	}
-
 
 	public String getBookID() {
 		return bookID;
@@ -51,11 +45,11 @@ public class Book {
 		this.author = author;
 	}
 
-	public long getDueDate() {
+	public LocalDate getDueDate() {
 		return dueDate;
 	}
 
-	public void setDueDate(long dueDate) {
+	public void setDueDate(LocalDate dueDate) {
 		this.dueDate = dueDate;
 	}
 
@@ -78,7 +72,7 @@ public class Book {
 	@Override
 	public String toString() {
 
-		return String.format("%1$-4d %2$-50s %3$-20s %4$-10s %5$-5s",counter, bookTitle, author, status,bookID);
+		return String.format("%1$-4d %2$-50s %3$-20s %4$-10s %5$-15s",counter, bookTitle, author,bookID,status);
 	}
 
 }

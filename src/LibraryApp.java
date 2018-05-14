@@ -10,13 +10,15 @@ public class LibraryApp {
 		System.out.println();
 		String userID = Validator.getString(scan, "Please enter your name: ");
 		int userChoice = 0;
-		while (userChoice != 4) {
+		ActionMethod.wholeArrayAdd();
+		while (userChoice != 5) {
 		System.out.print(userID + ", ");
 		System.out.println("Please choose from the options below:");
 		System.out.println("1. Search by category");
 		System.out.println("2. Display our inventory");
 		System.out.println("3. Return");
-		System.out.println("4. Quit");
+		System.out.println("4. Donate book");
+		System.out.println("5. Quit");
 
 		userChoice = scan.nextInt();
 			// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -61,6 +63,11 @@ public class LibraryApp {
 
 				ActionMethod.returnMethod(userID, bookID);
 				System.out.println();
+			}
+			if (userChoice == 4) {
+				String userString = Validator.getString(scan, "Enter a book and author:(name,author)");
+				ActionMethod.addBook(userString);
+				
 			}
 		}
 		System.out.println("Thank you for visiting our library~!");

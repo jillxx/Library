@@ -16,6 +16,32 @@ public class ActionMethod {
 	static Scanner scan = new Scanner(System.in);
 	static ArrayList<String> rentList = new ArrayList<String>();
 	static ArrayList<String> wholeBook = new ArrayList<String>();
+	
+	public static void wholeArrayAdd() {
+		Path readFile = Paths.get("library/book.txt");
+		File file = readFile.toFile();// convert to a file object.
+
+		try {
+			FileReader fr = new FileReader(file);// read char to char
+
+			BufferedReader reader = new BufferedReader(fr);// read blocks of info
+
+			String line = reader.readLine();
+			int counter = 1;
+			while (line != null) {
+				String[] temp = line.split(",");
+				wholeBook.add(line);
+				line = reader.readLine();
+			}
+
+			reader.close();// close the file reader too
+
+		} catch (IOException e) {
+			System.out.println("The system is crashed, please try again");
+		}
+	}
+		
+	
 
 	public static void readFromBookList() {
 		Path readFile = Paths.get("library/book.txt");
@@ -32,7 +58,7 @@ public class ActionMethod {
 			int counter = 1;
 			while (line != null) {
 				String[] temp = line.split(",");
-				wholeBook.add(line);// this is adding the list to an array which we can modify the txt file
+				//wholeBook.add(line); this is adding the list to an array which we can modify the txt file
 				Book b = new Book(temp[1], temp[2], temp[3], counter, temp[0]);
 				System.out.print(b);// this is printing the whole list
 				if (temp.length>4) {
@@ -120,7 +146,7 @@ public class ActionMethod {
 			int counter = 1;
 			ArrayList<String> searchAuthor = new ArrayList<String>();
 			while (line != null) {
-				wholeBook.add(line);
+				//wholeBook.add(line);
 				String[] tempA = line.split(",");
 				Book ba = new Book(tempA[1], tempA[2], tempA[3], counter, tempA[0]);
 				String[] tempAuthor = tempA[2].toLowerCase().split("[ :.,?!]+");
@@ -175,7 +201,7 @@ public class ActionMethod {
 			int counter = 1;
 			ArrayList<String> searchKeyword = new ArrayList<String>();
 			while (line != null) {
-				wholeBook.add(line);// adding whole book list to the arraylist
+				//wholeBook.add(line);// adding whole book list to the arraylist
 				String[] temp = line.split(",");
 
 				Book b = new Book(temp[1], temp[2], temp[3], counter, temp[0]);
@@ -220,15 +246,15 @@ public class ActionMethod {
 		Path readFile = Paths.get("library/book.txt");// get the path of the file
 		File file = readFile.toFile();// convert to a file object.
 
-		try {
-			FileReader fr = new FileReader(file);// read char to char
-			BufferedReader reader = new BufferedReader(fr);// read blocks of info
+		
+			//FileReader fr = new FileReader(file);// read char to char
+			//BufferedReader reader = new BufferedReader(fr);// read blocks of info
 
-			String line = reader.readLine();
-			while (line != null) {
+			
+			/*while (line != null) {
 				wholeBook.add(line);
 				line = reader.readLine();
-			}
+			}*/
 			System.out.printf("     %1$-50s %2$-20s %3$-10s %4$-10s", "BookTitle", "Author", "Status", "BookId");
 			System.out.println();
 			int counterR = 1;
@@ -242,12 +268,8 @@ public class ActionMethod {
 					System.out.println(br);
 					counterR++;
 				}
-			}
-			reader.close();
-		} catch (IOException e) {
-			System.out.println("Something went wrong");
-		}
-	}
+			}}
+		
 
 	// =========================================================
 	public static void returnMethod(String userID, int bookID) {
@@ -263,13 +285,12 @@ public class ActionMethod {
 
 			for (int i = 0; i < wholeBook.size(); i++) {
 				String[] temp1 = wholeBook.get(i).split(",");
-
 				int returnID = Integer.parseInt(temp1[0]);
 
 				if ((bookID == returnID)) {
 					if (!temp1[3].equals(Status.OnShelf.toString())) {
 
-						// temp1[3] = Status.OnShelf.toString();
+						temp1[3] = Status.OnShelf.toString();
 						wholeBook.set(i, temp1[0] + "," + temp1[1] + "," + temp1[2] + "," + Status.OnShelf);
 
 					} else {
@@ -291,13 +312,54 @@ public class ActionMethod {
 			if (!file1.renameTo(file)) {
 				System.out.println("Could not rename file");
 			}
-			System.out.println(rentList.size() + " items has been checked out.");
+			System.out.println(rentList.size() + " item(s) have been returned out.");
 			// System.out.println(rentList.get(1));
 
 		} catch (IOException e) {
 			System.out.println("Something went wrong");
 		}
 
+	}
+
+
+
+	public static void addBook(String userString) {
+		Path readFile = Paths.get("library/book.txt");// get the path of the file
+		File file = readFile.toFile();// convert to a file object.
+		Path writeFile = Paths.get("library/temp.txt"); // create a temp file path
+		File file1 = writeFile.toFile();
+
+		try {
+			FileReader fr = new FileReader(file);// read char to char
+			BufferedReader reader = new BufferedReader(fr);// read blocks of info
+			PrintWriter outW = new PrintWriter(new FileOutputStream(file1));
+			
+		String[] temp1 = wholeBook.get(wholeBook.size()-1).split(",");
+		int newBookID = Integer.parseInt(temp1[0]);
+		newBookID++;
+		wholeBook.add(newBookID +"," + userString + "," + Status.OnShelf);
+		System.out.println("You added :" + userString);
+		for (int i = 0; i < wholeBook.size(); i++) {
+			
+			outW.println(wholeBook.get(i));
+		}
+
+		outW.close();
+		reader.close();
+
+		if (!file.delete()) {// delete the old booklist file
+			System.out.println("Could not delete file");
+			return;
+		}
+
+		// Rename the temp file book.txt
+		if (!file1.renameTo(file)) {
+			System.out.println("Could not rename file");
+		}
+
+	} catch (IOException e) {
+		System.out.println("Something went wrong");
+	}
 	}
 
 }

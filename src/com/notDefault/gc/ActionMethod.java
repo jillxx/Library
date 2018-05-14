@@ -1,3 +1,4 @@
+package com.notDefault.gc;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -41,9 +42,10 @@ public class ActionMethod {
 		}
 	}
 
-	public static void readFromBookList() {
+	public static String readFromBookList() {
 		Path readFile = Paths.get("library/book.txt");
 		File file = readFile.toFile();// convert to a file object.
+		StringBuilder sb = new StringBuilder();
 
 		try {
 			FileReader fr = new FileReader(file);// read char to char
@@ -53,6 +55,7 @@ public class ActionMethod {
 			String line = reader.readLine();
 			System.out.printf("     %1$-50s %2$-20s %3$-10s %4$-15s %5$-15s", "BookTitle", "Author", "BookID", "Status",
 					"Due Date");
+			sb.append("BookTitle\t Author\t BookID\t Status\t Due Date\n");
 			System.out.println();
 			int counter = 1;
 			while (line != null) {
@@ -60,10 +63,12 @@ public class ActionMethod {
 				// wholeBook.add(line); this is adding the list to an array which we can modify
 				// the txt file
 				Book b = new Book(temp[1], temp[2], temp[3], counter, temp[0]);
-				System.out.print(b);// this is printing the whole list
+				sb.append(b);
+				// this is printing the whole list
 				if (temp.length > 4) {
-					System.out.print(temp[5]);
+					sb.append(temp[5]);
 				}
+				sb.append("\n");
 				System.out.println();
 				counter++;
 				line = reader.readLine();
@@ -74,6 +79,7 @@ public class ActionMethod {
 		} catch (IOException e) {
 			System.out.println("The system is crashed, please try again");
 		}
+		return sb.toString();
 	}
 
 	// ==============================================================================================
@@ -133,11 +139,11 @@ public class ActionMethod {
 
 	// =================================================================================================
 
-	public static void researchAuthor(String author, String userID) {
-
+	public static String researchAuthor(String author, String userID) {
+		StringBuilder sb1 = new StringBuilder();
 		Path readFile = Paths.get("library/book.txt");
 		File file = readFile.toFile();// convert to a file object.
-
+		
 		try {
 			FileReader fr = new FileReader(file);// read char to char
 
@@ -156,11 +162,12 @@ public class ActionMethod {
 				String[] tempAuthor = tempA[2].toLowerCase().split("[ :.,?!]+");
 
 				if (Arrays.asList(tempAuthor).contains(author.trim().toLowerCase())) {
+					sb1.append(ba);
 					System.out.print(ba);
 					if (tempA.length > 4) {
 						System.out.print(tempA[5]);
 					}
-					System.out.println();
+					sb1.append("\n");
 
 					String b1 = tempA[1] + "," + tempA[2] + "," + tempA[3] + "," + tempA[0];
 					counter++;
@@ -176,12 +183,13 @@ public class ActionMethod {
 		IOException e) {
 			System.out.println("The system is crashed, please try again");
 		}
+		return sb1.toString();
 
 	}
 	// =============================================================================================
 
-	public static void researchKeyword(String keyword, String userID) {
-
+	public static String researchKeyword(String keyword, String userID) {
+		StringBuilder sb2 = new StringBuilder();
 		Path readFile = Paths.get("library/book.txt");
 		File file = readFile.toFile();// convert to a file object.
 
@@ -203,11 +211,11 @@ public class ActionMethod {
 				String[] tempTitle = temp[1].toLowerCase().split("[ :.,?!]+");
 
 				if (Arrays.asList(tempTitle).contains(keyword.trim().toLowerCase())) {
-					System.out.print(b);
+					sb2.append(b);
 					if (temp.length > 4) {
 						System.out.print(temp[5]);
 					}
-					System.out.println();
+					sb2.append("\n");
 
 					String b1 = temp[1] + "," + temp[2] + "," + temp[3] + "," + temp[0];
 					counter++;
@@ -221,6 +229,7 @@ public class ActionMethod {
 		} catch (IOException e) {
 			System.out.println("The system is crashed, please try again");
 		}
+		return sb2.toString();
 
 	}
 
@@ -309,7 +318,8 @@ public class ActionMethod {
 
 	}
 
-	public static void addBook(String userString) {
+	public static String addBook(String userString) {
+		StringBuilder sb3 = new StringBuilder();
 		Path readFile = Paths.get("library/book.txt");// get the path of the file
 		File file = readFile.toFile();// convert to a file object.
 		Path writeFile = Paths.get("library/temp.txt"); // create a temp file path
@@ -324,7 +334,7 @@ public class ActionMethod {
 			int newBookID = Integer.parseInt(temp1[0]);
 			newBookID++;
 			wholeBook.add(newBookID + "," + userString + "," + Status.OnShelf);
-			System.out.println("You added :" + userString);
+			sb3.append("You added :" + userString);
 			for (int i = 0; i < wholeBook.size(); i++) {
 
 				outW.println(wholeBook.get(i));
@@ -335,8 +345,7 @@ public class ActionMethod {
 
 			if (!file.delete()) {// delete the old booklist file
 				System.out.println("Could not delete file");
-				return;
-			}
+							}
 
 			// Rename the temp file book.txt
 			if (!file1.renameTo(file)) {
@@ -346,6 +355,12 @@ public class ActionMethod {
 		} catch (IOException e) {
 			System.out.println("Something went wrong");
 		}
+		return  sb3.toString();
+	}
+
+	public static String returnMethod(String text, Object value) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

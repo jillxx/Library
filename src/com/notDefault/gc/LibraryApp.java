@@ -72,6 +72,7 @@ public class LibraryApp {
 				ActionMethod.returnMethod(userID, bookID);
 				System.out.println("Please put the book on the shelf. Thank you!\n");
 			}
+			// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 			if (userChoice == 4) {
 				String userString = Validator.getString(scan, "Enter a book and author:(name,author)");
 				ActionMethod.addBook(userString);

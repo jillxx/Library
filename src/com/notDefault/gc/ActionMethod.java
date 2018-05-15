@@ -55,7 +55,7 @@ public class ActionMethod {
 			String line = reader.readLine();
 			System.out.printf("     %1$-50s %2$-20s %3$-10s %4$-15s %5$-15s", "BookTitle", "Author", "BookID", "Status",
 					"Due Date");
-			sb.append("BookTitle\t Author\t BookID\t Status\t Due Date\n");
+			//sb.append("BookTitle\t Author\t BookID\t Status\t Due Date\n");
 			System.out.println();
 			int counter = 1;
 			while (line != null) {
@@ -247,7 +247,8 @@ public class ActionMethod {
 	}
 
 	// ========================================================================================
-	public static void pullRentList(String userID) {
+	public static String pullRentList(String userID) {
+		StringBuilder sb3 = new StringBuilder();
 		System.out.println("You have the following book.");
 		System.out.printf("     %1$-50s %2$-20s %3$-10s %4$-15s %5$-15s", "BookTitle", "Author", "BookID", "Status",
 				"Due Date");
@@ -258,14 +259,15 @@ public class ActionMethod {
 
 			if (tempR[3].equals(Status.CheckedOut.toString()) && (userID.equalsIgnoreCase(tempR[4].toString()))) {
 				Book br = new Book(tempR[1], tempR[2], tempR[3], counterR, tempR[0]);
-				System.out.print(br);
+				sb3.append(br);
 				if (tempR.length > 4) {
 					System.out.print(tempR[5]);
 				}
-				System.out.println();
+				sb3.append("\n");
 				counterR++;
 			}
 		}
+		return sb3.toString();
 	}
 
 	// =========================================================
